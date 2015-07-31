@@ -149,7 +149,7 @@ static int FMDBTokenizerNext(sqlite3_tokenizer_cursor *pCursor,  /* Cursor retur
     // The range from the tokenizer is in UTF-16 positions, we need give UTF-8 positions to SQLite.
     CFIndex usedBytes1, usedBytes2;
     CFRange range1 = CFRangeMake(0, cursor->currentRange.location);
-    CFRange range2 = CFRangeMake(0, cursor->currentRange.length);
+    CFRange range2 = CFRangeMake(0, CFStringGetLength(cursor->tokenString));
     
     // This will tell us how many UTF-8 bytes there are before the start of the token
     CFStringGetBytes(cursor->inputString, range1, kCFStringEncodingUTF8, '?', false,
