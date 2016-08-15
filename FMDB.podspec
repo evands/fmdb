@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
 
   # common_FTS: for internal use only
   s.subspec 'common_FTS' do |ss|
-    ss.source_files = 'src/extra/fts3/*.{h,m}'
-    ss.pod_target_xcconfig = { 'OTHER_CFLAGS' => '$(inherited) -DSQLITE_ENABLE_FTS4=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1' }
+    ss.source_files = 'src/extra/fts3/*.{h,m}'		
+    ss.pod_target_xcconfig = { 'OTHER_CFLAGS' => '$(inherited) -DSQLITE_HAS_CODEC -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_FTS4_UNICODE61 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5' }
   end
   
   # standard: built-in library version of sqlite3
