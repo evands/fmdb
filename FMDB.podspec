@@ -49,7 +49,6 @@ Pod::Spec.new do |s|
   s.subspec 'SQLCipher' do |ss|
     ss.dependency 'SQLCipher'
     ss.dependency 'FMDB/common'
-    ss.xcconfig = { 'OTHER_CFLAGS' => '$(inherited) -DSQLITE_HAS_CODEC -DHAVE_USLEEP=1' }   
 
     # SQLCipher/FTS:, SQLCipher replaces sqlite3 + FTS3 + custom FTS tokenizer source files
     ss.subspec 'FTS' do |sss|
