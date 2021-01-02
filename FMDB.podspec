@@ -58,6 +58,7 @@ Pod::Spec.new do |s|
 	
     # SQLCipher/FTS:, SQLCipher replaces sqlite3 + FTS3 + custom FTS tokenizer source files
     ss.subspec 'FTS' do |sss|
+	  sss.dependency 'FMDB/SQLCipher'
       sss.dependency 'SQLCipher/fts'
       sss.dependency 'FMDB/common_FTS'
 	end
